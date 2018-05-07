@@ -1,0 +1,16 @@
+version: '2'
+services:
+  stateless:
+    build: stateless/.
+  stateful:
+    build: stateful/.
+    volumes:
+      - ./stateful/tmp:/tmp
+  gateway:
+    build: gateway/.
+    depends_on:
+      - stateful
+      - stateless
+    ports:
+      - "8080:8080"
+

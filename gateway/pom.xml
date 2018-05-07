@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>de.bindoc</groupId>
-	<artifactId>stateful-service</artifactId>
+	<artifactId>gateway-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<parent>
@@ -48,7 +48,7 @@
 	</dependencies>
 
 	<build>
-    <finalName>stateful</finalName>
+    <finalName>gateway</finalName>
 		<sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
 		<testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
 		<plugins>
@@ -75,6 +75,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+
 		</plugins>
 	</build>
 

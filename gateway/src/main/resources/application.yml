@@ -1,0 +1,5 @@
+gateway:
+  stateful:
+    url: http://stateful:8080/
+  stateless:
+    url: http://stateless:8080/
