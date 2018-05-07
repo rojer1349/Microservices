@@ -28,7 +28,7 @@ class Controller(
     }
 
     data class Response(
-        val stateful: StatefulClient.State,
+        val stateful: String,
         val stateless: String
     )
 }

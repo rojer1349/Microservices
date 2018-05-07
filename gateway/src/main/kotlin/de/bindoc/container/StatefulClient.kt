@@ -9,13 +9,10 @@ class StatefulClient(
     val restTemplate: RestTemplate
 ) {
 
-    fun getState(): State {
-        val state = restTemplate.getForObject(configuration.statefulUrl, State::class.java)
+    fun getState(): String {
+        val state = restTemplate.getForObject(configuration.statefulUrl, String::class.java)
                 ?: throw IllegalStateException("Could not retrieve state from stateful service")
         return state
     }
 
-    data class State(val isPersistent: Boolean) {
-        private constructor(): this(false)
-    }
 }

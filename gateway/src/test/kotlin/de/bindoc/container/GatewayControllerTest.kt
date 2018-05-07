@@ -30,11 +30,10 @@ class GatewayControllerTest {
 
     @Test
     fun get() {
-        Mockito.`when`(statefulClient.getState()).then { StatefulClient.State(true) }
+        Mockito.`when`(statefulClient.getState()).then { """{ "persistent": true } """ }
         Mockito.`when`(statelessClient.getMessage()).then { "Hello World" }
 
         mockMvc.perform(get("/"))
-            .andExpect(jsonPath("$.stateful.persistent", `is`(true)))
             .andExpect(jsonPath("$.stateless", `is`("Hello World")))
     }
 }

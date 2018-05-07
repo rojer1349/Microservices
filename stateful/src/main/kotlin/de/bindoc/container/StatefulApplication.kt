@@ -11,7 +11,7 @@ class StatefulApplication
 @RestController
 class Controller(val stateService: StateService) {
   @GetMapping("/")
-  fun getState() = stateService.state
+  fun getState() = stateService.state.isPersistent
 }
 
 fun main(args: Array<String>) {
