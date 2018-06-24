@@ -1,13 +1,13 @@
 version: '2'
 services:
   stateless:
-    build: stateless/.
+    image: stateless/.
   stateful:
-    build: stateful/.
+    image: stateful/.
     volumes:
       - ./stateful/tmp:/tmp
   gateway:
-    build: gateway/.
+    image: gateway/.
     depends_on:
       - stateful
       - stateless
