@@ -9,8 +9,8 @@ services:
   gateway:
     image: roger1349/gateway:v1.
     depends_on:
-      - stateful
-      - stateless
+      - roger1349/stateless:v1.
+      - roger1349/stateful:v1.
     ports:
       - "8080:8080"
 
