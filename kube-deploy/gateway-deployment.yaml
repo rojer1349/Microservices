@@ -1,4 +1,3 @@
-gateway-deployment.yaml docs/concepts/workloads/controllers  
 apiVersion: apps/v1
 kind: Deployment
 metadata:
