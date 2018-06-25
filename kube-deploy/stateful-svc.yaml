@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: my-service
+  name: stateful
 spec:
   selector:
-    app: MyApp
+    app: stateful
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 9376
+    port: 8080
+    targetPort: 8080

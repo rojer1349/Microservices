@@ -1,22 +1,22 @@
-nginx-deployment.yaml docs/concepts/workloads/controllers  
+stateful-deployment.yaml docs/concepts/workloads/controllers  
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: stateful-deployment
   labels:
-    app: nginx
+    app: stateful
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: stateful
   template:
     metadata:
       labels:
-        app: nginx
+        app: stateful
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.7.9
+      - name: stateful
+        image: gcr.io/intense-howl-207913/stateful:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8080
