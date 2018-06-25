@@ -1,0 +1,22 @@
+stateless-deployment.yaml docs/concepts/workloads/controllers  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stateless-deployment
+  labels:
+    app: stateless
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: stateless
+  template:
+    metadata:
+      labels:
+        app: stateless
+    spec:
+      containers:
+      - name: stateless
+        image: gcr.io/intense-howl-207913/stateless:v1
+        ports:
+        - containerPort: 8080
