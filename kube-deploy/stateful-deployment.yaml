@@ -21,7 +21,7 @@ spec:
         - containerPort: 8080
         volumeMounts:
         - name: stateful
-          mountPath: /tmp/state
+          mountPath: /tmp
       volumes:
       - name: stateful
         persistentVolumeClaim:
