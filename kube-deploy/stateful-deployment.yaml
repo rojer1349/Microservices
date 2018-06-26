@@ -19,8 +19,6 @@ spec:
         image: ubuntu
         ports:
         - containerPort: 8080
-        command: [ "/bin/bash", "-c", "--" ]
-        args: [ "while true; do sleep 30; done;" ]        
         volumeMounts:
         - name: stateful
           mountPath: /tmp/state
