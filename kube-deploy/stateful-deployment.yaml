@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: stateful
-        image: gcr.io/intense-howl-207913/nginx:v1
+        image: gcr.io/intense-howl-207913/statefull:v2
         ports:
         - containerPort: 8080
         volumeMounts:
