@@ -19,10 +19,3 @@ spec:
         image: gcr.io/intense-howl-207913/stateless:v1
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - name: stateful
-          mountPath: /tmp
-      volumes:
-      - name: stateful
-        persistentVolumeClaim:
-          claimName: stateful-claim 
