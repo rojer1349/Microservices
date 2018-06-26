@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: stateful
-        image: gcr.io/intense-howl-207913/stateful:v2
+        image: ubuntu
         ports:
         - containerPort: 8080
         command: [ "/bin/bash", "-c", "--" ]
