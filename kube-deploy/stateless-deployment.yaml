@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: stateless
-        image: gcr.io/intense-howl-207913/stateless:v1
+        image: gcr.io/intense-howl-207913/stateless:v2
         ports:
         - containerPort: 8080
