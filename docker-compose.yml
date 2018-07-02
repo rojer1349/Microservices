@@ -5,7 +5,7 @@ services:
   stateful:
     image: gcr.io/intense-howl-207913/stateful:v2
     volumes:
-      - stateful-claim
+      - ./stateful/tmp:/tmp
   gateway:
     image: gcr.io/intense-howl-207913/gateway:v1
     depends_on:
