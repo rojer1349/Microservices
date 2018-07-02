@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.1.0 (36652f6)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: stateless
+  name: stateless
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: stateless
+    spec:
+      containers:
+      - image: quay.io/rojer1349/stateless
+        name: stateless
+        resources: {}
+      restartPolicy: Always
+status: {}

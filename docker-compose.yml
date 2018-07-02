@@ -1,16 +1,16 @@
 version: '2'
 services:
   stateless:
-    image: roger1349/stateless:v1.
+    image: quay.io/rojer1349/stateless
   stateful:
-    image: roger1349/stateful:v1.
+    image: quay.io/rojer1349/stateful
     volumes:
       - ./stateful/tmp:/tmp
   gateway:
-    image: roger1349/gateway:v1.
+    image: quay.io/rojer1349/gateway
     depends_on:
-      - roger1349/stateless:v1.
-      - roger1349/stateful:v1.
+      - stateful
+      - stateless
     ports:
       - "8080:8080"
 
