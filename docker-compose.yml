@@ -1,13 +1,13 @@
 version: '2'
 services:
   stateless:
-    image: quay.io/rojer1349/stateless
+    image: gcr.io/intense-howl-207913/stateless:v1
   stateful:
-    image: quay.io/rojer1349/stateful
+    image: gcr.io/intense-howl-207913/stateful:v2
     volumes:
       - ./stateful/tmp:/tmp
   gateway:
-    image: quay.io/rojer1349/gateway
+    image: gcr.io/intense-howl-207913/gateway:v1
     depends_on:
       - stateful
       - stateless
