@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    app: "mysql-app"
+spec:
+  replicas: 1
+  selector:
+    app: "mysql-app"
+  template:
+    metadata:
+      labels:
+        app: "mysql-app"
+    spec:
+      containers:
+      -
+        env:
+          -
+            name: "100fd"
+            value: "mysql"
+        image: "mysql"
+        name: "mysql"
+        ports:
+          -
+            containerPort: 2869
