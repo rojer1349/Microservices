@@ -17,7 +17,7 @@ spec:
       -
         env:
           -
-            name: "100fd"
+            name: "fd100"
             value: "mysql"
         image: "mysql"
         name: "mysql"
