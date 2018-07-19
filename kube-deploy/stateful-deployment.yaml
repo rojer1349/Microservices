@@ -18,7 +18,7 @@ spec:
       - name: stateful
         image: gcr.io/intense-howl-207913/stateful:v2
         ports:
-        - containerPort: 80
+        - containerPort: 2869
         volumeMounts:
         - name: stateful
           mountPath: /tmp
