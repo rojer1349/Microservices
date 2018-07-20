@@ -6,13 +6,13 @@ spec:
  serviceName: "mongo"
  replicas: 3
  template:
- metadata:
- labels:
-   role: mongo
-   environment: test
+  metadata:
+    labels:
+      role: mongo
+        environment: test
  spec:
- terminationGracePeriodSeconds: 10
- containers:
+  terminationGracePeriodSeconds: 10
+  containers:
    - name: mongo
      image: mongo
      command:
@@ -33,11 +33,11 @@ spec:
          value: "role=mongo,environment=test"
  volumeClaimTemplates:
  - metadata:
- name: mongo-persistent-storage
- annotations:
+  name: mongo-persistent-storage
+  annotations:
    volume.kubernetes.io/storage-class: "fast"
  spec:
- accessModes: ["ReadWriteOnce"]
- resources:
+  accessModes: ["ReadWriteOnce"]
+  resources:
    requests:
      storage: 1Gi
