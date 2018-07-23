@@ -18,4 +18,4 @@ spec:
       - name: gateway
         image: gcr.io/intense-howl-207913/gateway:v1
         ports:
-        - containerPort: 2869
+        - containerPort: 8080
