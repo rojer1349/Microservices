@@ -20,10 +20,9 @@ spec:
         ports:
         - containerPort: 8080
         volumeMounts:
-        - name: gce-pd
+        - name: stateful
           mountPath: /tmp
       volumes:
-      - name: gce-pd
-        gcePersistentDisk:
-          pdName: pse-disk 
-          fsType: ext4  
+      - name: stateful
+        persistentVolumeClaim:
+          claimName: stateful-claim 
