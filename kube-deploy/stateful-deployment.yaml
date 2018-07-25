@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: stateful
-        image: gcr.io/intense-howl-207913/stateful:v1
+        image: docker.io/roger1349/stateful:v1
         ports:
         - containerPort: 8080
         volumeMounts:

@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: gcr.io/intense-howl-207913/gateway:v1
+        image: docker.io/roger1349/gateway:v1
         ports:
         - containerPort: 8080
