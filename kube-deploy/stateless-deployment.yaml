@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: stateless
-        image: docker.io/roger1349/stateless:v1
+        image: docker.io/roger1349/stateless:v
         ports:
         - containerPort: 8080
