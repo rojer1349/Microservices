@@ -4,19 +4,12 @@ import org.hamcrest.Matchers.closeTo
 import org.junit.Test
 
 import org.junit.Assert.*
-import org.junit.runner.RunWith
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.test.context.junit4.SpringRunner
-import java.time.Duration
-import java.time.temporal.TemporalUnit
 
-@SpringBootTest
-@RunWith(SpringRunner::class)
+import java.time.Duration
+
 class FakeCalculationServiceTest {
 
-    @Autowired
-    lateinit var fakeCalculationService: FakeCalculationService
+    val fakeCalculationService: FakeCalculationService = FakeCalculationService()
 
     @Test
     fun calculate() {

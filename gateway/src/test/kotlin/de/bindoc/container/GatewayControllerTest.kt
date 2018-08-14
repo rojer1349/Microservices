@@ -1,7 +1,5 @@
 package de.bindoc.container
 
-import org.hamcrest.Matchers.`is`
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
@@ -11,8 +9,8 @@ import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.context.junit4.SpringRunner
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers.print
+import java.time.Duration
 import java.time.Instant
 
 
@@ -32,10 +30,9 @@ class GatewayControllerTest {
     @Test
     fun get() {
         Mockito.`when`(statefulClient.getState()).then { State(Instant.now(), false) }
-        Mockito.`when`(statelessClient.getMessage()).then { "Hello World" }
+        Mockito.`when`(statelessClient.getMessage()).then { Calculation(Instant.now(), Duration.ofMillis(800)) }
 
         mockMvc.perform(get("/"))
             .andDo(print())
-            .andExpect(jsonPath("$.stateless", `is`("Hello World")))
     }
 }

@@ -19,6 +19,6 @@ class GatewayController(
 
     data class Response(
         val stateful: State,
-        val stateless: String
+        val stateless: Calculation
     )
 }
