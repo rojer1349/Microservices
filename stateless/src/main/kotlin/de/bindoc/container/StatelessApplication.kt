@@ -13,7 +13,7 @@ class StatelessApplication
 class Controller {
 
     @GetMapping("/")
-    fun show(): String = "Hello World"
+    fun show(): String = "Rolling update"
 
 }
 
