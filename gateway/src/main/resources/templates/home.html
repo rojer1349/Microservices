@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Gateway - Home</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+        <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    </head>
+    <body>
+        <h1>Gateway Application</h1>
+        <h2>Stateless</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td><b>Start</b></td>
+                    <td>
+                        <p th:text="${calculation.start}"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Dauer</b></td>
+                    <td>
+                        <p th:text="${calculation.duration.toMillis()} + ' ms'"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Statefull</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td><b>LastModified</b></td>
+                    <td>
+                        <p th:text="${state.lastModified}"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Persistent</b></td>
+                    <td>
+                        <p th:text="${state.persistent}"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
