@@ -17,6 +17,5 @@ class FakeCalculationServiceTest {
             val calculation = fakeCalculationService.calculate(Duration.ofMillis(500))
             assertThat(calculation.duration.toMillis().toDouble(), closeTo(500.00, 75.0))
         }
-
     }
 }
