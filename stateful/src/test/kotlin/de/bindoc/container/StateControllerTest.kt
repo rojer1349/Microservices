@@ -1,7 +1,8 @@
 package de.bindoc.container
 
-import org.junit.Ignore
 import org.junit.Test
+
+import org.junit.Assert.*
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.springframework.beans.factory.annotation.Autowired
@@ -11,29 +12,22 @@ import org.springframework.test.context.junit4.SpringRunner
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers.print
-import java.time.Duration
 import java.time.Instant
 
-
-@Ignore
-//@WebMvcTest(GatewayController::class)
+@WebMvcTest(StateController::class)
 @RunWith(SpringRunner::class)
-class GatewayControllerTest {
+class StateControllerTest {
 
     @Autowired
     lateinit var mockMvc: MockMvc
 
     @MockBean
-    lateinit var statefulClient: StatefulClient
-
-    @MockBean
-    lateinit var statelessClient: StatelessClient
+    lateinit var stateService: StateService
 
     @Test
-    fun get() {
-        Mockito.`when`(statefulClient.getState()).then { State(Instant.now(), false) }
-        Mockito.`when`(statelessClient.getMessage()).then { Calculation(Instant.now(), Duration.ofMillis(800)) }
-
+    fun getState() {
+        val now = Instant.now()
+        Mockito.`when`(stateService.state).then { State.Persistent(now) }
         mockMvc.perform(get("/"))
             .andDo(print())
     }

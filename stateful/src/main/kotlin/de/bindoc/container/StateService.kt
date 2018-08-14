@@ -14,16 +14,12 @@ class StateService(
     init {
         val file = File(directory, "state")
         if(file.exists()) {
-            state = State.Persistent()
+            state = State.Persistent(file.lastModified())
         } else {
             state = State.NotPersistent()
             file.createNewFile()
         }
     }
 
-
-    sealed class State(val isPersistent: Boolean) {
-        class Persistent: State(true)
-        class NotPersistent: State(false)
-    }
 }
+
