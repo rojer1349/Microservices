@@ -43,7 +43,7 @@ metadata:
     name: locust
     role: worker
 spec:
-  replicas: 30
+  replicas: 5
   selector:
     name: locust
     role: worker
