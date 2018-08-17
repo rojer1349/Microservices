@@ -23,7 +23,7 @@ spec:
             - name: LOCUST_MODE
               value: master
             - name: TARGET_HOST
-              value: http://radzhiv.microservices.review/
+              value: http://k8snode20.k8scanada.online/metrics
           ports:
             - name: loc-master-web
               containerPort: 8089
@@ -62,7 +62,7 @@ spec:
             - name: LOCUST_MASTER
               value: locust-master
             - name: TARGET_HOST
-              value: http://radzhiv.microservices.review/
+              value: http://k8snode20.k8scanada.online/metrics
 ---
 kind: Service
 apiVersion: v1
