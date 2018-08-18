@@ -18,12 +18,12 @@ spec:
     spec:
       containers:
         - name: locust
-          image: gcr.io/cloud-solutions-images/locust-tasks:latest
+          image: docker.io/roger1349/locust:v4
           env:
             - name: LOCUST_MODE
               value: master
             - name: TARGET_HOST
-              value: http://k8snode20.k8scanada.online/metrics
+              value: http://35.198.171.189:8080/
           ports:
             - name: loc-master-web
               containerPort: 8089
@@ -55,14 +55,14 @@ spec:
     spec:
       containers:
         - name: locust
-          image: gcr.io/cloud-solutions-images/locust-tasks:latest
+          image: docker.io/roger1349/locust:v4
           env:
             - name: LOCUST_MODE
               value: worker
             - name: LOCUST_MASTER
               value: locust-master
             - name: TARGET_HOST
-              value: http://k8snode20.k8scanada.online/metrics
+              value: http://35.198.171.189:8080/
 ---
 kind: Service
 apiVersion: v1
